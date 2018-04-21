@@ -1,0 +1,21 @@
+div {
+	margin: 10px;
+}
+
+button {
+	margin: 10px;
+}
+
+.hide {
+	visibility: hidden;
+}
+
+.show {
+	visibility: visible;
+	margin: -1px;
+	border: 2px blue solid;
+}
+
+.gifs {
+	border: 3px black solid;
+}
