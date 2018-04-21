@@ -1,4 +1,4 @@
-var topics = ["Step Brothers", "Happy Gilmore", "Talladega Nights", "The Hangover", "Superbad", "Moana", "Dumb and Dumber", "Wedding Crashers", "Zoolander", "Knocked Up"];
+var topics = ["Step Brothers", "Happy Gilmore", "Talladega Nights", "The Hangover", "Superbad", "Austin Powers", "Dumb and Dumber", "Wedding Crashers", "Zoolander", "Knocked Up"];
 var t = this;
 var gifs = $(".gifs");
 
