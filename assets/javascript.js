@@ -25,7 +25,7 @@ $('#add-movie').on("click", function(event) {
 	renderButtons();
 	displayGifs();
 })
-
+displayGifs();
 //This is where the GIFS get displayed on the screen
 function displayGifs() {
 $(".movie").on('click', function(event) {
@@ -45,6 +45,10 @@ $(".movie").on('click', function(event) {
 			var stillGif = results[i].images.original_still.url;
 			var movingGif = results[i].images.original.url;
 			var rating = results[i].rating;
+			var h2 = $("<h2>");
+			h2.addClass("rating");
+			h2.text("Rating: " + rating);
+			$(".gifs").append(h2);
 			var img = $("<img>");
 			img.attr("state", "still")
 			img.attr("animate", movingGif);
