@@ -24,9 +24,11 @@ $('#add-movie').on("click", function(event) {
 	displayGifs();
 })
 displayGifs();
+
 //This is where the GIFS get displayed on the screen
 function displayGifs() {
 $(".movie").on('click', function(event) {
+	$(".gifs").empty()
 	var movie = $(this).attr("data-name");
 	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + movie + "&api_key=Qx4ETygEaJrjofWZDueP40hBswnofyGz";
 	console.log(movie);
@@ -61,6 +63,8 @@ $(".movie").on('click', function(event) {
 			} else {
 				continue;
 			}
+			
+			$(".gifs").empty()
 			//FOR LOOP CLOSING
 //for loop closing
 		};
