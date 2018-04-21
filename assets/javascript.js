@@ -22,6 +22,7 @@ $('#add-movie').on("click", function(event) {
 	topics.push(addMovie);
 	renderButtons();
 	displayGifs();
+	$("#movie-input").val(" ");
 })
 displayGifs();
 
