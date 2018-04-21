@@ -23,9 +23,11 @@ $('#add-movie').on("click", function(event) {
 	var addMovie = $("#movie-input").val().trim();
 	topics.push(addMovie);
 	renderButtons();
+	displayGifs();
 })
 
 //This is where the GIFS get displayed on the screen
+function displayGifs() {
 $(".movie").on('click', function(event) {
 	var movie = $(this).attr("data-name");
 	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + movie + "&api_key=Qx4ETygEaJrjofWZDueP40hBswnofyGz";
@@ -75,10 +77,4 @@ $(".movie").on('click', function(event) {
 		};
     });
 });
-
-$('#add-movie').on("click", function(event) {
-	event.preventDefault();
-	var addMovie = $("#movie-input").val().trim();
-	topics.push(addMovie);
-	renderButtons();
-})
+};
