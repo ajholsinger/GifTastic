@@ -1,7 +1,5 @@
-var topics = ["Step+Brothers", "Happy+Gilmore", "Talladega+Nights", "The+Hangover", "Superbad", "Moana", "Dumb+and+Dumber", "Wedding+Crashers", "Zoolander", "Knocked+Up"];
+var topics = ["Step Brothers", "Happy Gilmore", "Talladega Nights", "The Hangover", "Superbad", "Moana", "Dumb and Dumber", "Wedding Crashers", "Zoolander", "Knocked Up"];
 var t = this;
-
-var queryURL = "https://api.giphy.com/v1/;gifs/search?q=" + "&api_key=Qx4ETygEaJrjofWZDueP40hBswnofyGz";
 var gifs = $(".gifs");
 
 function renderButtons() {
@@ -50,11 +48,12 @@ $(".movie").on('click', function(event) {
 			h2.text("Rating: " + rating);
 			$(".gifs").append(h2);
 			var img = $("<img>");
-			img.attr("state", "still")
-			img.attr("animate", movingGif);
-			img.attr("still", stillGif);
+			img.attr("data-state", "still")
+			img.attr("data-animate", movingGif);
+			img.attr("data-still", stillGif);
 			img.attr("src", stillGif);
 			img.addClass("gif");
+			img.click(toggleGif);
 			console.log(img);
 			$(".gifs").append(img);
 			if (i === 9) { 
@@ -62,23 +61,23 @@ $(".movie").on('click', function(event) {
 			} else {
 				continue;
 			}
-			
-			$(".gif").on("click", function() {
-      // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
-      var state = $(this).attr("state");
-				var dataAnimate = $(this).attr("src", movingGif);
-				var dataStill = $(this).attr("src", stillGif);
-				console.log(state);
-			if (state === "still") {
-        $(this).attr("src", $(this).attr("animate"));
-        $(this).attr("state", "animate");
-      } else {
-        $(this).attr("src", $(this).attr("still"));
-        $(this).attr("state", "still");
-      }
-    });
-
+			//FOR LOOP CLOSING
+//for loop closing
 		};
     });
+	function toggleGif() {
+      // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+      var state = $(this).attr("data-state");
+				console.log(state);
+		
+			if (state === "still") {
+				$(this).attr("data-state", "animate");
+				$(this).attr("src", $(this).attr("data-animate"));
+				console.log("Who's a goose");
+      } else if (state === "animate") {
+				$(this).attr("data-state", "still");
+				$(this).attr("src", $(this).attr("data-still"));
+      }
+	}
 });
 };
